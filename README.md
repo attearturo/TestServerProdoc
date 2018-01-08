@@ -1,12 +1,8 @@
-# Test Server Prodoc  [![GitHub version](https://badge.fury.io/gh/google%2Fmaterial-design-lite.svg)](https://badge.fury.io/gh/google%2Fmaterial-design-lite)
-[![npm version](https://badge.fury.io/js/material-design-lite.svg)](https://badge.fury.io/js/material-design-lite)
-[![Dependency Status](https://david-dm.org/google/material-design-lite.svg)](https://david-dm.org/google/material-design-lite)
+# Test Server Prodoc  [![GitHub version](https://badge.fury.io/gh/google%2Fmaterial-design-lite.svg)](https://badge.fury.io/gh/google%2Fmaterial-design-lite)[![npm version](https://badge.fury.io/js/material-design-lite.svg)](https://badge.fury.io/js/material-design-lite)[![Dependency Status](https://david-dm.org/google/material-design-lite.svg)](https://david-dm.org/google/material-design-lite)
 
 
 <p align="center">
-  <a href="https://images.guide/">
-    <img src='/app/images/logo-banner.jpg' alt="Essential Image Optimization"/>
-  </a>
+    <img src='http://res.cloudinary.com/attearturo/image/upload/v1515452047/portadagit_bmhxun.png' alt="Prodoc"/>
 </p>
 
 ## What is Prodoc?
@@ -66,60 +62,70 @@ In the `api.js`, you can find the next routes for server:
 post/api/login
 ```
 **Correo y contraseña:**
+
 Revisa la existencia del usuario en la base de datos y retorna toda la información del usuario encontrado.
 
 ```sh
 post/api/register
 ```
 **Nombre, correo, psw y foto de perfil:**
+
 Agrega al usuario en la base de datos con todos los campos brindados.
 
 ```sh
 post/api/:email/projects
 ```
 **Correo:**
+
 Busca los proyectos relacionados con el usuario y retorna la lista resultante.
 
 ```sh
 post/api/:ident
 ```
 **Identificación del proyecto:**
+
 Obtiene toda la información de un proyecto en específico.
 
 ```sh
 post/api/:email
 ```
 **Correo:**
+
 Introduce a un nuevo usuario al proyecto.
 
 ```sh
 post/api/:email/:ident
 ```
 **Correo e identificación del proyecto:**
+
 Introduce el nuevo proyecto relacionado con el usuario.
 
 ```sh
 post/api/:ident/linkList/:link
 ```
 **Link:**
+
 Ingresa el nuevo link a la lista de urls de un proyecto específico
 
 ```sh
 post/api/:ident/:chat/:msg
 ```
 **Mensaje:**
+
 Envía un nuevo mensaje a la lista de mensajes del chat.
 
 ```sh
 post/api/:ident/fileList/:file
 ```
 **Archivo:**
+
 Agrega el archivo enviado a la lista de archivos de un proyecto en específico.
 
 ```sh
 post/api/deleteUser/:email
 ```
 **Correo e identificación del proyecto:**
+
 Elimina al usuario de un proyecto específico y de su lista de proyectos.
 
 
@@ -132,7 +138,7 @@ In addition to [ES6](https://github.com/attearturo/Prodoc) syntax features.
 
 <h2>Core Team</h2>
 
-[![Arturo Gómez](http://res.cloudinary.com/attearturo/image/upload/v1515449116/arturo3_ffrfuc.png)](https://github.com/attearturo) | [![Jose David Giraldo](http://res.cloudinary.com/attearturo/image/upload/v1515449112/jose_qbwutd.jpg)](https://github.com/josedavidgm1995) | [![Camilo Montoya](http://res.cloudinary.com/attearturo/image/upload/v1515449583/camilo_gftg7c.jpg)](https://github.com/korneas)
+[![Arturo Gómez](http://res.cloudinary.com/attearturo/image/upload/v1515451247/arturo3_hngldz.png)](https://github.com/attearturo) | [![Jose David Giraldo](http://res.cloudinary.com/attearturo/image/upload/v1515449112/jose_qbwutd.jpg)](https://github.com/josedavidgm1995) | [![Camilo Montoya](http://res.cloudinary.com/attearturo/image/upload/v1515449583/camilo_gftg7c.jpg)](https://github.com/korneas)
 :---:|:---:|:---:
 [Arturo Gómez](https://github.com/attearturo) | [Jose David Giraldo](https://github.com/josedavidgm1995) | [Camilo Montoya](https://github.com/korneas)
 

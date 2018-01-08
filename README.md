@@ -1,9 +1,13 @@
-# Test Server Prodoc
-
-[![GitHub version](https://badge.fury.io/gh/google%2Fmaterial-design-lite.svg)](https://badge.fury.io/gh/google%2Fmaterial-design-lite)
+# Test Server Prodoc  [![GitHub version](https://badge.fury.io/gh/google%2Fmaterial-design-lite.svg)](https://badge.fury.io/gh/google%2Fmaterial-design-lite)
 [![npm version](https://badge.fury.io/js/material-design-lite.svg)](https://badge.fury.io/js/material-design-lite)
 [![Dependency Status](https://david-dm.org/google/material-design-lite.svg)](https://david-dm.org/google/material-design-lite)
 
+
+<p align="center">
+  <a href="https://images.guide/">
+    <img src='/app/images/logo-banner.jpg' alt="Essential Image Optimization"/>
+  </a>
+</p>
 
 ## What is Prodoc?
 We’re glad you asked! Prodoc is where design happens. It’s a digital workspace that powers your design teams — all the pieces and the people — so you can get things done.
@@ -22,13 +26,16 @@ TestServerProdoc/
   package.json
   api.js
   server.js
-
 ```
 
 For the project to build, **these files must exist with exact filenames**:
 
 * `server.js` is the JavaScript entry point.
 * `api.js` is the route entries;
+
+Then, you will need install the Node modules from npm like this:
+
+### `$ npm intall`
 
 You can delete or rename the other files.
 
@@ -40,12 +47,12 @@ They will not be included in the production build so you can use them for things
 
 ## Available Scripts
 
-You just need to open the server on yout localhost with:
+You just need to open the server on your localhost with:
 
-### `node server.js`
+### `$ node server.js`
 
 Open the server in the development mode.<br>
-Check [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Check [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
@@ -55,45 +62,66 @@ You will also see any lint errors in the console.
 
 In the `api.js`, you can find the next routes for server:
 
-### `post/api/login`
+```sh
+post/api/login
+```
 **Correo y contraseña:**
 Revisa la existencia del usuario en la base de datos y retorna toda la información del usuario encontrado.
 
-### `post/api/register`
+```sh
+post/api/register
+```
 **Nombre, correo, psw y foto de perfil:**
 Agrega al usuario en la base de datos con todos los campos brindados.
 
-### `post/api/:email/projects`
+```sh
+post/api/:email/projects
+```
 **Correo:**
 Busca los proyectos relacionados con el usuario y retorna la lista resultante.
 
-### `post/api/:ident`
+```sh
+post/api/:ident
+```
 **Identificación del proyecto:**
 Obtiene toda la información de un proyecto en específico.
 
-### `post/api/:ident/:email`
+```sh
+post/api/:email
+```
 **Correo:**
 Introduce a un nuevo usuario al proyecto.
 
-### `post/api/:email/:ident`
+```sh
+post/api/:email/:ident
+```
 **Correo e identificación del proyecto:**
 Introduce el nuevo proyecto relacionado con el usuario.
 
-### `post/api/:ident/linkList/:link`
+```sh
+post/api/:ident/linkList/:link
+```
 **Link:**
 Ingresa el nuevo link a la lista de urls de un proyecto específico
 
-### `post/api/:ident/:chat/:msg`
+```sh
+post/api/:ident/:chat/:msg
+```
 **Mensaje:**
 Envía un nuevo mensaje a la lista de mensajes del chat.
 
-### `post/api/:ident/fileList/:file`
+```sh
+post/api/:ident/fileList/:file
+```
 **Archivo:**
 Agrega el archivo enviado a la lista de archivos de un proyecto en específico.
 
-### `post/api/deleteUser/:email`
+```sh
+post/api/deleteUser/:email
+```
 **Correo e identificación del proyecto:**
 Elimina al usuario de un proyecto específico y de su lista de proyectos.
+
 
 
 ## Supported Language Features and Polyfills
@@ -104,27 +132,9 @@ In addition to [ES6](https://github.com/attearturo/Prodoc) syntax features.
 
 <h2>Core Team</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top">
-        <img width="100" height="100" src="http://res.cloudinary.com/attearturo/image/upload/v1515449116/arturo3_ffrfuc.png">
-        <br>
-        <a href="https://github.com/attearturo">Arturo Gómez</a>
-      </td>
-      <td align="center" valign="top">
-        <img width="100" height="100" src="http://res.cloudinary.com/attearturo/image/upload/v1515449112/jose_qbwutd.jpg">
-        <br>
-        <a href="https://github.com/josedavidgm1995">Jose David Giraldo</a>
-      </td>
-      <td align="center" width="20%" valign="top">
-        <img width="100" height="100" src="http://res.cloudinary.com/attearturo/image/upload/v1515449093/camilo_e7punh.jpg">
-        <br>
-        <a href="https://github.com/korneas">Camilo Montoya</a>
-      </td>
-     </tr>
-  </tbody>
-</table>
+[![Arturo Gómez](http://res.cloudinary.com/attearturo/image/upload/v1515449116/arturo3_ffrfuc.png)](https://github.com/attearturo) | [![Jose David Giraldo](http://res.cloudinary.com/attearturo/image/upload/v1515449112/jose_qbwutd.jpg)](https://github.com/josedavidgm1995) | [![Camilo Montoya](http://res.cloudinary.com/attearturo/image/upload/v1515449583/camilo_gftg7c.jpg)](https://github.com/korneas)
+:---:|:---:|:---:
+[Arturo Gómez](https://github.com/attearturo) | [Jose David Giraldo](https://github.com/josedavidgm1995) | [Camilo Montoya](https://github.com/korneas)
 
 
 ## License

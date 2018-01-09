@@ -29,13 +29,7 @@ For the project to build, **these files must exist with exact filenames**:
 * `server.js` is the JavaScript entry point.
 * `api.js` is the route entries;
 
-Then, you will need install the Node modules from npm like this:
-
-### `$ npm intall`
-
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
+You can delete or rename the other files. But, you may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
 You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
 
 You can, however, create more top-level directories.<br>
@@ -43,7 +37,11 @@ They will not be included in the production build so you can use them for things
 
 ## Available Scripts
 
-You just need to open the server on your localhost with:
+First at all, you will need install the Node modules from npm like this:
+
+### `$ npm intall`
+
+Then you just need to open the server on your localhost with:
 
 ### `$ node server.js`
 

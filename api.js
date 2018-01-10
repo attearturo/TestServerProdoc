@@ -30,6 +30,7 @@ mongoClient.connect(url, (err,database) => {
 
 //=======================================================================
 // rutas
+
 api.route('/usuarios')
     .get((req, res) => {
         db.collection('usuarios')
@@ -45,6 +46,24 @@ api.route('/usuarios')
                 }
             });
     });
+
+api.route('/login')
+    .post((req, res) => {
+        var target_user = {
+            email: req.body.email,
+            psw: req.body.psw
+        };
+
+        var target_editor = {
+            editors: {
+                $eleMatch: {
+                    email: req.body.email,
+                }
+            }
+        };
+    });
+
+
 
 module.exports = api;
 

@@ -29,24 +29,92 @@ mongoClient.connect(url, (err,database) => {
 });
 
 //=======================================================================
-// rutas
+// rutas de peticion  All
+// verifica si existe un usuario y todos los usuarios y todos los proyectos
 
-api.route('/usuarios')
-    .get((req, res) => {
-        db.collection('usuarios')
-            .find({})
-            .toArray((err, usuarios) => {
-                if (!err) {
-                    res.json({
-                        mensaje: 'ok',
-                        usuarios: usuarios,
-                    });
+api.route('/user/home')
+    .all((req, res) => {
+        var target_user = {
+            email: req.body.email,
+            psw: req.body.psw
+        };
+
+        var target_editor = {
+            editors: {
+                $elemMatch: {
+                    email: req.body.email,
+                }
+            }
+        };
+
+        db.collection('users')
+            .find(target_user)
+            .toArray((err, users) => {
+                if (err) throw err;
+                if (users.length > 0) {
+
+                    db.collection('projects')
+                        .find(target_editor)
+                        .toArray((error, usersProjects) => {
+                            if(error) throw error;
+                            if (usersProjects > 0) {
+                                
+                                res.json({
+                                    response: 'valid',
+                                    users: users,
+                                    projects: usersProjects
+                                });
+
+                            } else {
+
+                                res.json({
+                                    response: 'valid',
+                                    users: users,
+                                });
+
+                            }
+                        });
                 } else {
-                    res.json({ mensaje: 'error' });
+
+                    res.json({
+                        response: 'invalid',
+                    });
+
+                }            
+            });
+    });
+
+//=======================================================================
+// rutas de modificacion POST
+
+// verifica si existe un usuario y devuelve su nombre
+api.route('/entry')
+    .post((req, res) => {
+        var target_user = {
+            email: req.body.email
+        };
+
+        db.collection('users')
+            .find(target_user)
+            .toArray((err, users) => {
+                if(err) throw err;
+                if (users.length > 0) {
+
+                    res.json({
+                        response: 'valid',
+                        user_name: users[0].name,
+                    });
+
+                } else {
+
+                    res.json({
+                        response: 'invalid',
+                    });
                 }
             });
     });
 
+// verifica si existe un usuario y devuelve sus datos y proyectos
 api.route('/login')
     .post((req, res) => {
         var target_user = {
@@ -61,6 +129,43 @@ api.route('/login')
                 }
             }
         };
+
+        db.collection('users')
+            .find(target_user)
+            .toArray((err, users) => {
+                if (err) throw err;
+                if (users.length > 0) {
+
+                    db.collection('projects')
+                        .find(target_editor)
+                        .toArray((error, usersProjects) => {
+                            if (error) throw error;
+                            if (usersProjects > 0) {
+
+                                res.json({
+                                    response: 'valid',
+                                    user: users[0],
+                                    projects: usersProjects
+                                });
+
+                            } else {
+
+                                res.json({
+                                    response: 'valid',
+                                    user: user[0],
+                                });
+
+                            }
+                        });
+                } else {
+
+                    res.json({
+                        response: 'invalid',
+                    });
+
+                }
+            });
+
     });
 
 

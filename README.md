@@ -54,7 +54,9 @@ You will also see any lint errors in the console.
 
 ## API Server
 
-In the `api.js`, you can find the next routes for server:
+In the `api.js`, you can find the next routes for server using network requests with [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), which provides a generic definition of Request and Response objects (and other things involved with network requests).
+
+### `POST Method`
 
 ```sh
 post/api/login

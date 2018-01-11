@@ -1,3 +1,5 @@
+import { read } from 'fs';
+
 const fs = require('fs'),
 express = require('express'),
 cliente = require('mongodb');
@@ -168,6 +170,44 @@ api.route('/login')
 
     });
 
+// verifica si existe un usuario y devuelve sus datos y proyectos
+api.route('/register')
+    .post((req, res) => {
+        var target_user = {
+            email: req.body.email,
+            psw: req.body.psw
+        };
+
+        db.collection('users')
+            .find(target_user)
+            .toArray((err, users) => {
+                if (err) throw err;
+                if (!err && users.lenght == 0) {
+                    
+                    if (!req.files) {
+                        return res.json({ mensaje: 'Sin archivo' });
+                    }
+
+                    var new_user ={
+                        name: req.body.name,
+                        email:req.body.email,
+                        psw: req.body.psw,
+                        photo_url:req.body.photo_url
+                    };
+
+                    db.collection('users').insert(new_user, (errInsert) => {
+                        if(!errInsert){
+                            res.json({
+                                mensaje: 'valid',
+                                user: new_user
+                            });
+                        } else {
+                            res.json({ mensaje: 'invalid' });
+                        }
+                    });
+                }
+            });
+    });
 
 
 module.exports = api;

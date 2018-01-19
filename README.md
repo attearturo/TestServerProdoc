@@ -11,9 +11,10 @@ We’re glad you asked! Prodoc is where design happens. It’s a digital workspa
 > This is a public server for testing. It's building with Node.js using MongoDB Atlas.
 
 
+
 ## Folder Structure
 
-After creation, your project should look like this:
+After creation, your project should look like this: (In building)
 
 ```
 TestServerProdoc/
@@ -145,4 +146,4 @@ In addition to [ES6](https://github.com/attearturo/Prodoc) syntax features.
 
 ## License
 
-© Profeticos, 2017. Cali, Colombia
+© Profeticos, 2017.

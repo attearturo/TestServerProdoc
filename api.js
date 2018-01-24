@@ -1,5 +1,3 @@
-import { read } from 'fs';
-
 const fs = require('fs'),
 express = require('express'),
 cliente = require('mongodb');

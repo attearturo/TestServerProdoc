@@ -147,9 +147,5 @@ In addition to [ES6](https://github.com/attearturo/Prodoc) syntax features.
 ## License
 
 © Profeticos, 2017.
-
-## License
-
-© Profeticos 2017
 Cali, Colombia
 
